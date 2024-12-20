@@ -2,6 +2,8 @@
   position: absolute;
   width: 15px;
   height: 15px;
+  top: -15px;
+  left: -15px;
   opacity: var(--opacity, 0);
 }
 

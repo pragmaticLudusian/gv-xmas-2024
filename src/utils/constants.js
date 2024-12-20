@@ -14,7 +14,6 @@ export const songsArray = [
 ];
 
 export const cssRoot = document.querySelector(":root");
-
 export const pageElement = document.querySelector(".page");
 
 export const cardElement = document.querySelector(".card");
@@ -22,6 +21,14 @@ export const cardFrontElement = cardElement.querySelector(".card__front");
 export const cardCoverElements = cardElement.querySelectorAll(".card__cover");
 export const cardElements = [cardElement, cardFrontElement].concat(
   Array.from(cardCoverElements)
+);
+
+export const cardEncourageElement =
+  cardElement.querySelector(".card__encourage");
+export const cardPunishElement = cardElement.querySelector(".card__punish");
+export const cardMiracleElement = cardElement.querySelector(".card__miracle");
+export const cardSnowflakesElement = cardElement.querySelector(
+  ".card__emojis_row_snowflakes"
 );
 
 export const cardContentElement = cardElement.querySelector(".card__content");

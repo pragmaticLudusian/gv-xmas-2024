@@ -7,6 +7,10 @@ import {
   cardFrontElement,
   cardCoverElements,
   cardElements,
+  cardEncourageElement,
+  cardPunishElement,
+  cardMiracleElement,
+  cardSnowflakesElement,
   cardContentElement,
   cardHintElement,
   videoElement,
@@ -33,10 +37,30 @@ const timer = setInterval(() => {
   )}s`;
 }, 1000);
 
-cardFrontElement.addEventListener("click", () => {
+cardFrontElement.addEventListener("click", (event) => {
   if (getComputedStyle(cardElement)["animation-play-state"] === "paused") {
     // prevent animation interruption
-    cardElement.classList.contains("card_opened") ? cardClose() : cardOpen();
+    if (cardElement.classList.contains("card_opened")) {
+      cardClose();
+    } else {
+      if (event.target === cardEncourageElement) {
+        cardSnowflakesElement.textContent = "⛄☃️⛄";
+        pageElement.style.setProperty(
+          "--bgimage",
+          `url(${new URL("../images/bg_vaporwave_enc.gif", import.meta.url)})`
+        );
+      }
+      if (event.target === cardPunishElement) {
+        cardSnowflakesElement.textContent = "💦💦💦";
+        pageElement.style.setProperty(
+          "--bgimage",
+          `url(${new URL("../images/bg_vaporwave_pun.gif", import.meta.url)})`
+        );
+      }
+      if (event.target === cardMiracleElement) {
+        cardOpen();
+      }
+    }
   }
 });
 
@@ -114,8 +138,13 @@ function cardClose() {
   setTimeout(() => {
     cardSetAnimation("paused", "reverse");
     videoElement.setAttribute("src", `data:,`);
+    pageElement.style.setProperty(
+      "--bgimage",
+      `url(${new URL("../images/bg_vaporwave.gif", import.meta.url)})`
+    );
   }, 1000);
   cardElement.classList.remove("card_opened");
+  cardSnowflakesElement.textContent = "❄️❄️❄️";
 }
 
 function cardSetAnimation(state, dir = "normal") {

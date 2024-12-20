@@ -140,6 +140,8 @@
 
 .card__emojis {
   margin: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .card__back {
@@ -173,7 +175,7 @@
 }
 
 .color__violet {
-  color: #a0f;
+  color: #199bdc;
   text-shadow: 2px 2px slateblue;
 }
 

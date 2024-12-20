@@ -1,6 +1,6 @@
-# 2024 Holiday Card
+# 2024 Xmas Card
 
-For the 2024 [TripleTen](https://tripleten.co.il) holiday coding challenge.
+For the [Godville](https://godvillegame.com) Xmas Card Contest hosted on Discord.
 
 ## Features
 
