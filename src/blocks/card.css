@@ -67,6 +67,37 @@
   }
 }
 
+@keyframes e_rainbow {
+  0% {
+    text-shadow: 0 0 5px hsl(0, 100%, 50%), 0 0 10px hsl(0, 100%, 50%),
+      0 0 20px hsl(0, 100%, 50%), 0 0 40px hsl(0, 100%, 50%);
+  }
+  17% {
+    text-shadow: 0 0 5px hsl(60, 100%, 50%), 0 0 10px hsl(60, 100%, 50%),
+      0 0 20px hsl(60, 100%, 50%), 0 0 40px hsl(60, 100%, 50%);
+  }
+  33% {
+    text-shadow: 0 0 5px hsl(120, 100%, 50%), 0 0 10px hsl(120, 100%, 50%),
+      0 0 20px hsl(120, 100%, 50%), 0 0 40px hsl(120, 100%, 50%);
+  }
+  50% {
+    text-shadow: 0 0 5px hsl(180, 100%, 50%), 0 0 10px hsl(180, 100%, 50%),
+      0 0 20px hsl(180, 100%, 50%), 0 0 40px hsl(180, 100%, 50%);
+  }
+  67% {
+    text-shadow: 0 0 5px hsl(240, 100%, 50%), 0 0 10px hsl(240, 100%, 50%),
+      0 0 20px hsl(240, 100%, 50%), 0 0 40px hsl(240, 100%, 50%);
+  }
+  83% {
+    text-shadow: 0 0 5px hsl(300, 100%, 50%), 0 0 10px hsl(300, 100%, 50%),
+      0 0 20px hsl(300, 100%, 50%), 0 0 40px hsl(300, 100%, 50%);
+  }
+  100% {
+    text-shadow: 0 0 5px hsl(359, 100%, 50%), 0 0 10px hsl(359, 100%, 50%),
+      0 0 20px hsl(359, 100%, 50%), 0 0 40px hsl(359, 100%, 50%);
+  }
+}
+
 .card {
   height: 80%;
   aspect-ratio: 9 / 16;
@@ -111,6 +142,23 @@
   width: 90%;
   height: 94%;
   margin: 5%;
+}
+
+.card__encourage,
+.card__punish {
+  transition: text-shadow ease 0.4s;
+}
+
+.card__encourage:hover {
+  text-shadow: 0 0 40px deepskyblue;
+}
+
+.card__punish:hover {
+  text-shadow: 0 0 40px #f00;
+}
+
+.card__miracle:hover {
+  animation: e_rainbow 4s linear 0s infinite;
 }
 
 .card__title {
